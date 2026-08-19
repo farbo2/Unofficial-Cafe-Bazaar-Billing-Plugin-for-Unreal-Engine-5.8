@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	CafeBazaarBilling_UPL.xml
+
+	Wires CafeBazaarBillingBridge.java and the official Cafe Bazaar Poolakey SDK
+	into the generated Android Gradle project. Referenced from
+	CafeBazaarBilling.Build.cs via AdditionalPropertiesForReceipt["AndroidPlugin"].
+
+	Unlike Myket, Poolakey's own AAR manifest already declares its required
+	permission (com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR) and its
+	BillingReceiver, so no manifestPlaceholders are needed here.
+-->
+<root xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<init>
+		<log text="CafeBazaarBilling UPL init" />
+	</init>
+
+	<!-- JitPack repository + the official Poolakey dependency.
+	     Bump the version below to whatever is current on
+	     https://github.com/cafebazaar/Poolakey/releases -->
+	<buildGradleAdditions>
+		<insert>
+			<![CDATA[
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+dependencies {
+    implementation "com.github.cafebazaar.Poolakey:poolakey:2.2.0"
+}
+			]]>
+		</insert>
+	</buildGradleAdditions>
+
+	<!-- Copy our Java bridge + custom ActivityResultRegistry into the generated
+	     Gradle project, preserving their package folder structure. -->
+	<resourceCopies>
+		<copyDir src="$S(PluginDir)/Java" dst="$S(BuildDir)/src" />
+	</resourceCopies>
+
+	<!-- Hook GameActivity.java: the bridge needs a current Activity, and
+	     purchase results arrive through onActivityResult (routed to our
+	     custom ActivityResultRegistry). -->
+	<gameActivityImportAdditions>
+		<insert>
+			<![CDATA[
+import com.cafebazaarbilling.CafeBazaarBillingBridge;
+			]]>
+		</insert>
+	</gameActivityImportAdditions>
+
+	<gameActivityOnCreateAdditions>
+		<insert>
+			<![CDATA[
+CafeBazaarBillingBridge.setActivity(this);
+			]]>
+		</insert>
+	</gameActivityOnCreateAdditions>
+
+	<gameActivityOnDestroyAdditions>
+		<insert>
+			<![CDATA[
+CafeBazaarBillingBridge.onDestroy();
+			]]>
+		</insert>
+	</gameActivityOnDestroyAdditions>
+
+	<gameActivityOnActivityResultAdditions>
+		<insert>
+			<![CDATA[
+CafeBazaarBillingBridge.handleActivityResult(requestCode, resultCode, data);
+			]]>
+		</insert>
+	</gameActivityOnActivityResultAdditions>
+
+</root>

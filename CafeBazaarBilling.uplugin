@@ -1,0 +1,26 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Cafe Bazaar Billing (Poolakey)",
+	"Description": "Blueprint-friendly wrapper around Cafe Bazaar's official Poolakey in-app billing SDK for Android. Exposes connect / purchase / subscribe / consume / query as a Game Instance Subsystem with dynamic multicast delegates.",
+	"Category": "Monetization",
+	"CreatedBy": "Farbod Heydari",
+	"CreatedByURL": "https://github.com/farbo2",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"EngineVersion": "5.8.0",
+	"EnabledByDefault": true,
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "CafeBazaarBilling",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
