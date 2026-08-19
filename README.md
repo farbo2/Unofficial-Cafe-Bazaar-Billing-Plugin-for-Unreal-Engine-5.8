@@ -1,4 +1,4 @@
-# Cafe Bazaar Billing for Unreal Engine 5
+# Cafe Bazaar Billing for Unreal Engine 5 [BETA]
 
 A Blueprint-friendly Unreal Engine 5 plugin for integrating Cafe Bazaar in-app purchases on Android.
 
