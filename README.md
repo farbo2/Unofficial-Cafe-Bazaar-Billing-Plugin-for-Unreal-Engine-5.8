@@ -17,7 +17,9 @@ The plugin exposes Cafe Bazaar billing through a **Game Instance Subsystem**, al
 ## Video Tutorial
 
 [![Watch the tutorial](https://img.youtube.com/vi/PA866R_BWmQ/maxresdefault.jpg)](https://youtu.be/PA866R_BWmQ)
+
 [Click the image above to watch the tutorial on YouTube.]
+
 ** Watch the full tutorial to learn how to install, configure, and integrate the Cafe Bazaar In-App Billing plugin into your Unreal Engine 5 project.**
 
 This video provides a practical walkthrough of the plugin setup and billing implementation.
