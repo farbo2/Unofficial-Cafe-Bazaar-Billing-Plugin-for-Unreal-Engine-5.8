@@ -20,11 +20,11 @@ import androidx.core.app.ActivityOptionsCompat;
  * no registry available out of the box - we provide our own.
  *
  * IMPORTANT - version coupling: this class was written and tested against
- * Poolakey 2.2.0's specific internal usage of ActivityResultRegistry (which
+ * Poolakey 2.3.0's specific internal usage of ActivityResultRegistry (which
  * contract types it registers, whether it goes through a plain Intent or an
  * IntentSender). It is NOT a general-purpose, SDK-agnostic reimplementation of
  * ComponentActivity's registry - it only handles the two contract shapes
- * Poolakey 2.2.0 is known to use. If you upgrade the `poolakey` dependency in
+ * Poolakey 2.3.0 is known to use. If you upgrade the `poolakey` dependency in
  * CafeBazaarBilling_UPL.xml, re-verify this class still matches (check
  * Poolakey's PaymentLauncher/PaymentLauncher.Builder for any new contract
  * types) before shipping.
