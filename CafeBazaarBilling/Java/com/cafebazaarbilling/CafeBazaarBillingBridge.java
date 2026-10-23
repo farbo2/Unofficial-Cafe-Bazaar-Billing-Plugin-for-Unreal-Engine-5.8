@@ -29,7 +29,7 @@ import kotlin.jvm.functions.Function1;
 
 /**
  * Static bridge between UE5's C++/JNI layer and Cafe Bazaar's official Poolakey SDK
- * (https://github.com/cafebazaar/Poolakey), v2.2.0.
+ * (https://github.com/cafebazaar/Poolakey), v2.3.0.
  *
  * Wired into GameActivity.java by CafeBazaarBilling_UPL.xml:
  *   - onCreate         -> setActivity(this)
