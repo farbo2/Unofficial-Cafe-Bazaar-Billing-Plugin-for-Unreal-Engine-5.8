@@ -29,7 +29,7 @@ allprojects {
 }
 
 dependencies {
-    implementation "com.github.cafebazaar.Poolakey:poolakey:2.2.0"
+    implementation "com.github.cafebazaar.Poolakey:poolakey:2.3.0"
 }
 			]]>
 		</insert>
